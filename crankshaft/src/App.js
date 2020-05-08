@@ -1,18 +1,28 @@
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar'
-import Card from './components/Card'
-import Menu from './components/Menu'
+import React, {Component} from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import {Navbar} from './components/Navbar';
+import {Home} from './Home';
+import {Footer} from './components/footer/Footer';
+import {About} from './Pages/About';
+// import RenderVideoPage from './Pages/'
+// import RenderSearchPage from './Pages/'
+// import PageNotFound from './Pages/'
+// import history from './history'
 
-function App() {
-  return (
-    <div className="App">
-        <Navbar/>
-        <Card />
-        <Menu />
-        <button className= "f6 link dim br3 ph3 pv2 mb2 dib red bg-light-green">Learn More</button><button className= "f6 link dim br3 ph3 pv2 mb2 dib red bg-light-green">Spare parts</button>
-    </div>
-  );
+class App extends Component {
+  render() {
+  return ( 
+    <React.Fragment>
+      <Router >
+       <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home}  />
+          <Route path="/Pages/About" component={About} />
+        </Switch>
+        <Footer />
+      </Router>
+    </React.Fragment>
+  )
 }
-
+}
 export default App;

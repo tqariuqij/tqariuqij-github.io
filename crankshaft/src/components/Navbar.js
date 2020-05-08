@@ -3,7 +3,7 @@ import Toolbar from './Toolbar/Toolbar'
 import SideDrawer from './SideDrawer/SideDrawer'
 import Backdrop from './BackDrop/BackDrop'
 
-class Navbar extends Component {
+export  class Navbar extends Component {
   state = {
     sideDrawerOpen: false,
   }
@@ -34,4 +34,3 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
